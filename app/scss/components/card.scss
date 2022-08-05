@@ -1,0 +1,250 @@
+@use "../util" as *;
+
+.header {
+    background-color: var(--softRed);
+    padding: rem(15) rem(25);
+    width: 95%;
+    margin: rem(15) auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: rem(20);
+
+    @include breakpoint(xlarge) {
+        width: 50%;
+    }
+
+    &__title {
+        line-height: 1.6;
+        color: var(--veryPaleOrange);
+
+        p {
+            font-weight: 400;
+            font-size: rem(20);
+        }
+
+        h1 {
+            font-weight: 700;
+        }
+    }
+
+    &__image {
+       max-width: 100%;
+       height: auto;
+    }
+}
+
+.main {
+    width: 95%;
+    margin: 0 auto;
+    padding: rem(10);
+    background-color: var(--veryPaleOrange);
+    border-radius: rem(10);
+
+    @include breakpoint(xlarge) {
+        width: 50%;
+    }
+
+    &__spending {
+        padding: rem(10);
+        margin-bottom: rem(20);
+        text-align: start;
+    }
+
+    &__graph {
+        display: flex;
+        flex-direction: column;
+        padding: rem(5);
+
+       
+
+       &--elements {
+            width: 100%;
+            height: 200px;
+            position: relative;
+
+            .money {
+                display: none;
+                position: absolute;
+                text-align: center;
+                width: 50px;
+                padding: rem(7);
+                margin-bottom: rem(10);
+                background-color: var(--darkBrown);
+                color: var(--veryPaleOrange);
+                border-radius: rem(5);
+                font-size: rem(12);
+                font-weight: 700;
+                animation-name: hover;
+                animation-duration: 0.3s;
+
+                @keyframes hover {
+                    0% {opacity: 0;}
+                    25% {opacity: 0.2;}
+                    50% {opacity: 0.5;}
+                    100% {opacity: 1;}
+                } 
+                
+            
+                &__mon {
+                    left: -2px;
+                    top: 65px;
+                }
+
+                &__tue {
+                    left: 45px;
+                    top: 25px;
+                }
+
+                &__wed {
+                    left: 91px;
+                    top: -35px;
+
+                    @include breakpoint(xlarge) {
+                        left: 92px;
+                    }
+                }
+                
+                &__thu {
+                    left: 140px;
+                    top: 35px;
+                }
+
+                &__fri {
+                    left: 185px;
+                    top: 55px;
+
+                    @include breakpoint(xlarge) {
+                        left: 187px;
+                    }
+                }
+
+                &__sat {
+                    left: 233px;
+                    top: 5px;
+                }
+
+                &__sun {
+                    left: 279px;
+                    top: 45px;
+
+                    @include breakpoint(xlarge) {
+                        left: 281px;
+                    }
+                }
+            }
+
+            .amounts {
+                display: inline-block;
+                width: 10%;
+                padding: rem(10);
+                background-color: var(--softRed);
+                margin: 0 rem(4.9);
+                border-radius: 2px;
+
+                @include breakpoint(xlarge) {
+                    width: 11%;
+                    margin: 0 rem(3.3);
+                }
+
+                &:hover {
+                    opacity: 0.6;
+                    cursor: pointer;
+                    transition: all 0.2s ease-in;
+                }
+            }
+
+            .active {
+                background-color: var(--cyan);
+                transition: all 0.1s ease-in;
+            }            
+       }
+
+       &--days {
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        position: relative;
+        font-weight: 400;
+        font-size: rem(18);
+        color: var(--mediumBrown);
+        margin-top: rem(-20);
+
+        .mon {
+            position: absolute;
+            left: 1%;
+        }
+
+        .tue {
+            position: absolute;
+            left: 17%;
+        }
+
+        .wed { 
+            position: absolute;
+            left: 30%;
+        }
+
+        .thu { 
+            position: absolute;
+            left: 46%;
+        }
+
+        .fri {
+            position: absolute;
+            left: 62%;
+        }
+
+        .sat {
+            position: absolute;
+            left: 75%;
+        }
+
+        .sun {
+            position: absolute;
+            left: 89%;
+        }
+       }
+    }
+
+    &__total {
+        border-top: rem(3) solid var(--cream);
+        padding: rem(10);
+        margin-top: rem(20);
+        display: flex;
+        justify-content: space-between;
+        align-items:center;
+        
+        
+        &--thisMonth {
+            line-height: 1.6;
+
+            span {
+                color: var(--mediumBrown);
+                font-weight: 400;
+            }
+
+            h3 {
+                color: var(--darkBrown);
+                font-weight: 700;
+                font-size: rem(30);
+            }
+            
+        }
+
+        &--difrence{
+            padding-top: rem(25);
+
+            h4 {
+                text-align: end;
+                color: var(--darkBrown);
+                font-weight: 700;
+            }
+
+            p {
+                color: var(--mediumBrown);
+                font-weight: 400;
+            }
+        }
+    }
+}

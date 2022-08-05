@@ -8,6 +8,15 @@
   
   <title>Frontend Mentor | Expenses chart component</title>
 
+  <!-- Google Fonts:  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap" rel="stylesheet">
+  
+  <!-- Styles and Script: -->
+  <link rel="stylesheet" href="dist/style.css">
+  <script defer src="dist/script.js"></script>
+
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
   <style>
     .attribution { font-size: 11px; text-align: center; }
@@ -16,28 +25,65 @@
 </head>
 <body>
 
-  My balance
-  $921.48
+  <header class="header">
+    <div class="header__title">
+      <p>My balance</p>
+      <h1>$921.48</h1>
+    </div>
 
-  Spending - Last 7 days
+    <div class="header__image">
+      <img src="images/logo.svg" alt="Logo">
+    </div>
+  </header>
 
-  mon
-  tue
-  wed
-  thu
-  fri
-  sat
-  sun
 
-  Total this month
-  $478.33
+  <main class="main">
+    <section class="main__spending">
+      <h2>Spending - Last 7 days</h2>
+    </section>
 
-  +2.4%
-  from last month
+    <section class="main__graph">
+      <div class="main__graph--elements">
+        <div class="money money__mon">mon</div>
+        <div class="money money__tue">tue</div>
+        <div class="money money__wed">wed</div>
+        <div class="money money__thu">thu</div>
+        <div class="money money__fri">fri</div>
+        <div class="money money__sat">sat</div>
+        <div class="money money__sun">sun</div>
+
+        <div class="amounts" style="height: 30%;"></div>
+        <div class="amounts" style="height: 50%;"></div>
+        <div class="amounts" style="height: 80%;"></div>
+        <div class="amounts" style="height: 45%;"></div>
+        <div class="amounts" style="height: 35%;"></div>
+        <div class="amounts" style="height: 60%;"></div>
+        <div class="amounts" style="height: 40%;"></div>
+      </div>
+      <div class="main__graph--days" id="days"></div>
+    </section>
+
+
+    <section class="main__total">
+      <div class="main__total--thisMonth">
+        <span>Total this month</span>
+        <h3>$478.33</h3>
+      </div>
+
+      <div class="main__total--difrence">
+        <h4>+2.4%</h4>
+        <p>from last month</p>
+      </div>
+    </section> 
+  </main>
+
   
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
+  <footer>
+    <div class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+      Coded by <a href="#">Djordje Rajc</a>.
+    </div>
+  </footer>
+
 </body>
 </html>
