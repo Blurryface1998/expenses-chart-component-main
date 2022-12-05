@@ -10,7 +10,7 @@
     align-items: center;
     border-radius: rem(20);
 
-    @include breakpoint(xlarge) {
+    @include breakpoint(medium) {
         width: 50%;
     }
 
@@ -41,9 +41,10 @@
     background-color: var(--veryPaleOrange);
     border-radius: rem(10);
 
-    @include breakpoint(xlarge) {
+    @include breakpoint(medium) {
         width: 50%;
     }
+    
 
     &__spending {
         padding: rem(10);
@@ -51,25 +52,20 @@
         text-align: start;
     }
 
-    &__graph {
-        display: flex;
-        flex-direction: column;
-        padding: rem(5);
-
+    &__graph {       
        
-
        &--elements {
             width: 100%;
             height: 200px;
             position: relative;
+            display: flex;
+            align-items: baseline;
+            justify-content: center;
 
             .money {
                 display: none;
                 position: absolute;
-                text-align: center;
-                width: 50px;
-                padding: rem(7);
-                margin-bottom: rem(10);
+                padding: rem(7) rem(5);
                 background-color: var(--darkBrown);
                 color: var(--veryPaleOrange);
                 border-radius: rem(5);
@@ -77,6 +73,8 @@
                 font-weight: 700;
                 animation-name: hover;
                 animation-duration: 0.3s;
+                max-width: 14.28%;
+                
 
                 @keyframes hover {
                     0% {opacity: 0;}
@@ -85,67 +83,50 @@
                     100% {opacity: 1;}
                 } 
                 
-            
                 &__mon {
-                    left: -2px;
-                    top: 65px;
+                    left: 0;
+                    top: 45%;
                 }
-
+                
                 &__tue {
-                    left: 45px;
-                    top: 25px;
+                    left: calc(100% - 85%);
+                    top: 25%;
                 }
-
+                
                 &__wed {
-                    left: 91px;
-                    top: -35px;
-
-                    @include breakpoint(xlarge) {
-                        left: 92px;
-                    }
+                    left: calc(100% - 71%);
+                    top: -5%;
                 }
                 
                 &__thu {
-                    left: 140px;
-                    top: 35px;
+                    left: calc(100% - 57%);
+                    top: 30%;
                 }
-
+                
                 &__fri {
-                    left: 185px;
-                    top: 55px;
-
-                    @include breakpoint(xlarge) {
-                        left: 187px;
-                    }
+                    left: calc(100% - 43%);
+                    top: 40%;
                 }
-
+                
                 &__sat {
-                    left: 233px;
-                    top: 5px;
+                    left: calc(100% - 29%);
+                    top: 15%;
                 }
-
+                
+                
                 &__sun {
-                    left: 279px;
-                    top: 45px;
-
-                    @include breakpoint(xlarge) {
-                        left: 281px;
-                    }
+                    left: calc(100% - 14%);
+                    top: 35%;
                 }
             }
 
             .amounts {
-                display: inline-block;
-                width: 10%;
+                flex: 14.28%;
+                max-width: 14.28%;
                 padding: rem(10);
                 background-color: var(--softRed);
-                margin: 0 rem(4.9);
+                margin: rem(30) rem(5);
                 border-radius: 2px;
-
-                @include breakpoint(xlarge) {
-                    width: 11%;
-                    margin: 0 rem(3.3);
-                }
 
                 &:hover {
                     opacity: 0.6;
@@ -168,7 +149,7 @@
         font-weight: 400;
         font-size: rem(18);
         color: var(--mediumBrown);
-        margin-top: rem(-20);
+        margin-top: rem(5);
 
         .mon {
             position: absolute;
